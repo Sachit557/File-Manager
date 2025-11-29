@@ -16,7 +16,7 @@ APP_WIDTH = 800
 APP_HEIGHT = 600
 
 app = ctk.CTk()
-app.title("File Manager - Cross Platform")
+app.title("File Manager")
 app.geometry(f"{APP_WIDTH}x{APP_HEIGHT}")
 app.minsize(640, 480)
 
