@@ -1,5 +1,4 @@
-# pesu_fm_simple.py
-# Simple CustomTkinter File Manager (PESU style)
+# Simple CustomTkinter File Manager
 
 import os
 import sys
