@@ -5,7 +5,7 @@ The program allows **browsing directories**, **opening files**, **creating and r
 It features a **dark theme with blue accents** and a **clean, intuitive interface**.
 It features a **dark theme with blue accents** and a **clean, intuitive interface**, compatible with **Windows, macOS, and Linux**.
 
----
+--- 
 
 ## **Features**
 
