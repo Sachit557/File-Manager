@@ -59,12 +59,15 @@ It features a **dark theme with blue accents** and a **clean, intuitive interfac
 ## **Screenshots**
 
  ### **Home View**
+ Displays the main interface with navigation buttons, path bar, drive selector (on Windows), and file/folder list.
   ![Home Screenshot](screenshots/Untitled.png)
 
-  ### **Folder Navigation**
+  ### **Creating a New File**
+  Shows the dialog and confirmation flow for creating a new empty file inside the selected directory.
   ![Navigation Screenshot](screenshots/Untitled2.png)
 
-  ### **File Operations Example**
+  ### **Deleting a File**
+  Demonstrates file selection and the delete operation using the file manager's action buttons.
   ![File Operations Screenshot](screenshots/Untitled3.png)
 
   
