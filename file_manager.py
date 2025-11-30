@@ -1,4 +1,4 @@
-# Simple CustomTkinter File Manager
+# Simple CustomTkinter File Manager ( some features from tkinter also utilised)
 
 import os
 import sys
@@ -7,17 +7,17 @@ import customtkinter as ctk
 import tkinter as tk
 from tkinter import filedialog, simpledialog, messagebox
 
-# --- Appearance ---
+# Appearence ( colour and theme )
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-# --- App Window ---
+# Window sidth and height 
 APP_WIDTH = 800
 APP_HEIGHT = 600
 
-app = ctk.CTk()
-app.title("File Manager")
-app.geometry(f"{APP_WIDTH}x{APP_HEIGHT}")
+app = ctk.CTk()  #the actual application 
+app.title("File Manager")   #the title shown at the top of the app
+app.geometry(f"{APP_WIDTH}x{APP_HEIGHT}")   
 app.minsize(640, 480)
 
 # starting folder = home
@@ -32,6 +32,44 @@ top_bar.pack(fill="x", padx=12, pady=(12, 6))
 path_label = ctk.CTkLabel(top_bar, text=curr_dir, anchor="w")
 path_label.pack(side="left", fill="x", expand=True, padx=(4, 8))
 
+# Major functions--
+#
+# change_dir(path)
+# Updates the global current dir and calss refresh_view.
+#
+# refresh_view()
+# Clears the Listbox and loads all folders/files in current dir.
+#
+# get_selected_item()
+# Returns the currently highlighted item in the Listbox.
+#
+#open_selected(event=None)
+#Opens a folder (navigates into it) or opens a file using OS default app.
+#
+#go_home()
+#goes to the default ( home) dir.
+#
+#pick_directory()
+#Opens a folder selection dialog and switches to the chosen dir.
+#
+#go_back(event=None)
+#Moves one dir up (parent folder).
+#
+#new_folder()
+#Creates a new folder inside the current dir.
+#
+#new_file()
+#Creates a new file inside the current dir.
+#
+#delete_selected()
+#Deletes the selected file (folder deletion doesnt work yet).
+#
+#rename_selected()
+#Renames the selected file or folder.
+
+
+
+
 
 def change_dir(path):
     """change current folder"""
@@ -42,9 +80,9 @@ def change_dir(path):
 
 
 # drive selector (only on windows)
-if sys.platform.startswith("win"):
-    DRIVES = ["C:", "D:", "E:", "F:"]
-    drive_var = tk.StringVar(value=DRIVES[0])
+if sys.platform.startswith("win"):  # windows device check
+    DRIVES = ["C:", "D:", "E:", "F:"]  # drives
+    drive_var = tk.StringVar(value=DRIVES[0])  # reffering to c drive
 
     def on_drive_select(choice):
         drive_path = choice + "\\"
@@ -61,7 +99,7 @@ if sys.platform.startswith("win"):
     )
     drive_selector.pack(side="right", padx=(8, 4))
 else:
-    drive_selector = ctk.CTkLabel(top_bar, text=" macOS/Linux ")
+    drive_selector = ctk.CTkLabel(top_bar, text=" macOS/Linux ")    #if not windows than mac or linux
     drive_selector.pack(side="right", padx=(8, 4))
 
 # ─────────────────────────────
@@ -227,7 +265,7 @@ def rename_selected():
 
 
 # ─────────────────────────────
-# CONTROL PANEL BUTTONS
+# CONTROL PANEL BUTTONS  
 # ─────────────────────────────
 control_bar = ctk.CTkFrame(app)
 control_bar.pack(fill="x", padx=12, pady=(6, 12))
